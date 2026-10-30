@@ -42,7 +42,7 @@ public class Board {
                 if(cell.getCellState().equals(CellState.EMPTY))
                 System.out.print(" - |");
                 else
-                    System.out.println(" " + cell.getPlayer().getSymbol().getAchar() + " |");
+                    System.out.print(" " + cell.getPlayer().getSymbol().getAchar() + " |");
             }
             System.out.println();
         }

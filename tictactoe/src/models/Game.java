@@ -93,8 +93,7 @@ public class Game {
     }
 
     public void printResult(){
-        if(gameStatus.equals(GameStatus.ENDED)){
-            System.out.println("Game has ended");
+        if(gameStatus.equals(GameStatus.ENDED)) {
             System.out.println("Winner is: " + winner.getName());
         }else{
             System.out.println("Game is draw");
@@ -119,12 +118,17 @@ public class Game {
 
     public void makeMove(){
         Player currentPlayer =  players.get(currentMovePlayerIndex);
+        System.out.println("It is " + currentPlayer.getName() + "'s turn.");
 
-        Cell proposedCell = currentPlayer.makeMove();
+        Cell proposedCell = currentPlayer.makeMove(board);
+
+        System.out.println("Move made at row: " + proposedCell.getRow() + " col: " + proposedCell.getCol() + ".");
 
         if(!validateMove(proposedCell)){
+            System.out.println("Invalid move.Please try again.");
             return;
         }
+
         Cell cellInBoard = board.getBoard().get(proposedCell.getRow()).get(proposedCell.getCol());
         cellInBoard.setCellState(CellState.FILLED);
         cellInBoard.setPlayer(currentPlayer);
