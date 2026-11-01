@@ -12,8 +12,6 @@ public class Cell {
         this.cellState =CellState.EMPTY;
     }
 
-
-
     public int getRow() {
         return row;
     }
@@ -44,5 +42,13 @@ public class Cell {
 
     public void setPlayer(Player player) {
         this.player = player;
+    }
+
+    public void display() {
+        if (getCellState().equals(CellState.EMPTY)) {
+            System.out.print(" - |");
+        } else {
+            System.out.print(" " + getPlayer().getSymbol().getaChar() + " |");
+        }
     }
 }

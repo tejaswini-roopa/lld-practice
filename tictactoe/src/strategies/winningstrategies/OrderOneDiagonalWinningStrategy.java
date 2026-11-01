@@ -15,7 +15,7 @@ public class OrderOneDiagonalWinningStrategy implements WinningStrategy {
 
    private final Map<Symbol, Integer> rightDiagMap;
 
-   public OrderOneDiagonalWinningStrategy(int size, List<Player> players) {
+   public OrderOneDiagonalWinningStrategy(List<Player> players) {
        leftDiagMap = new HashMap<>();
        rightDiagMap = new HashMap<>();
 
@@ -48,5 +48,24 @@ public class OrderOneDiagonalWinningStrategy implements WinningStrategy {
            return rightDiagMap.get(symbol) == board.getSize();
        }
         return false;
+    }
+
+    @Override
+    public void handleUndo(Board board, Move move) {
+        int row = move.getCell().getRow();
+        int col = move.getCell().getCol();
+        Symbol symbol = move.getPlayer().getSymbol();
+
+        if (row == col) {
+            leftDiagMap.put(
+                    symbol, leftDiagMap.get(symbol) - 1
+            );
+        }
+
+        if (row + col == board.getSize() - 1) {
+            rightDiagMap.put(
+                    symbol, rightDiagMap.get(symbol) - 1
+            );
+        }
     }
 }

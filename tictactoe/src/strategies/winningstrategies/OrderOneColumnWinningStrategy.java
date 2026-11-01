@@ -38,4 +38,15 @@ public class OrderOneColumnWinningStrategy implements WinningStrategy {
 
         return false;
     }
+
+    @Override
+    public void handleUndo(Board board, Move move) {
+        int col = move.getCell().getCol();;
+        Symbol symbol = move.getPlayer().getSymbol();
+
+        colMaps.get(col).put(
+                symbol,
+                colMaps.get(col).get(symbol) - 1
+        );
+    }
 }
