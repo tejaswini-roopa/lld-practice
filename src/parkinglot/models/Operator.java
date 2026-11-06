@@ -1,6 +1,6 @@
 package src.parkinglot.models;
 
-public class Operator {
+public class Operator extends BaseModel {
     private String name;
     private int employeeId;
 

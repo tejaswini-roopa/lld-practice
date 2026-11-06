@@ -2,7 +2,7 @@ package src.parkinglot.models;
 import src.parkinglot.models.Operator;
 import java.util.Date;
 
-public class Ticket {
+public class Ticket extends BaseModel {
     private ParkingSpot parkingSpot;
     private Date entryTime;
     private Date exitTime;

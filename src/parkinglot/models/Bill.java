@@ -2,7 +2,7 @@ package src.parkinglot.models;
 
 import java.util.Date;
 
-public class Bill {
+public class Bill extends BaseModel{
     private Date exitTime;
     private Ticket ticket;
     private Operator operator;

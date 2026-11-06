@@ -1,6 +1,6 @@
 package src.parkinglot.models;
 
-public class Vehicle {
+public class Vehicle extends BaseModel {
     private String vehicleNumber;
     private VehicleType vehicleType;
 
