@@ -1,5 +1,5 @@
 package src.parkinglot.strategies.feescalculatorystrategy;
 
-public enum FeesCalculatorStrategy {
+public interface FeesCalculatorStrategy {
     void calculateFees();
 }

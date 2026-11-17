@@ -5,7 +5,7 @@ import java.util.Date;
 public class Ticket extends BaseModel {
     private ParkingSpot parkingSpot;
     private Date entryTime;
-    private Date exitTime;
+    private Vehicle vehicle;
     private Gate gate;
     private Operator operator;
 
@@ -25,12 +25,12 @@ public class Ticket extends BaseModel {
         this.entryTime = entryTime;
     }
 
-    public Date getExitTime() {
-        return exitTime;
+    public Vehicle getVehicle() {
+        return vehicle;
     }
 
-    public void setExitTime(Date exitTime) {
-        this.exitTime = exitTime;
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
     }
 
     public Gate getGate() {
