@@ -1,4 +1,4 @@
-package models;
+package com.practice.bookmyshow.models;
 
 public enum PaymentStatus{
     SUCCESS,
